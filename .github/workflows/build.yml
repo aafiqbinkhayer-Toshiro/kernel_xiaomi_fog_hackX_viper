@@ -1,0 +1,19 @@
+name: CI - Fog Kernel
+on:
+  workflow_dispatch:
+
+jobs:
+  build-kernel:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Build
+        uses: dabao1955/kernel_build_action@main
+        with:
+          kernel-url: https://github.com/aafiqbinkhayer-Toshiro/kernel_xiaomi_fog_hackX_viper
+          kernel-branch: fog-devel
+          config: fog-perf_defconfig
+          arch: arm64
+          aosp-gcc: true
+          aosp-clang: true
+          android-version: 12
+          anykernel3: true
