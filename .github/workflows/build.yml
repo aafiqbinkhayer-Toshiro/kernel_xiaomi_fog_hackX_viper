@@ -11,7 +11,7 @@ jobs:
         with:
           kernel-url: https://github.com/aafiqbinkhayer-Toshiro/kernel_xiaomi_fog_hackX_viper
           kernel-branch: fog-devel
-          config: fog-perf_defconfig
+          config: vendor/fog-perf_defconfig
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
