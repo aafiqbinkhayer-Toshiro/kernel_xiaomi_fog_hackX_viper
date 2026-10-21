@@ -1,6 +1,15 @@
 name: CI - Fog Kernel
 on:
   workflow_dispatch:
+  push:
+    branches: [fog-devel]
+    paths-ignore:
+      - '.github/**'
+      - '**.md'
+
+concurrency:
+  group: fog-build
+  cancel-in-progress: true
 
 jobs:
   build-kernel:
@@ -17,3 +26,6 @@ jobs:
           aosp-clang: true
           android-version: 12
           anykernel3: true
+          ksu: true
+          ksu-version: v0.9.5
+          ksu-lkm: false
